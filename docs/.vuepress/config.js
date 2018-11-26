@@ -1,7 +1,7 @@
 module.exports = {
   title: 'PopMenu',
   description: 'Easily customizable popup style menu for iOS',
-  dest: '../public',
+  dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
