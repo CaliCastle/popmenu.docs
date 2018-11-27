@@ -12,6 +12,6 @@
 
 <style>
     .home .hero .action-button {
-        border-radius: 12px;
+        border-radius: 14px;
     }
 </style>

@@ -28,16 +28,6 @@
 
 **PopMenu** is designed as a quick _popup_ action menu, much like an action sheet in iOS. If you want an action sheet that looks great, you're in the right place!
 
-**PopMenu** has the abilities of:
-
-- Automatically position menu on screen if you specify the **source view**, like a popup. (edge detection)
-
-- Full customization (icons, fonts, colors, background, styles, corners, height, status bar... you name it).
-
-- Pan gesture control. (like 3D touch shortcuts on apps in home screen)
-
-- Haptics enabled for selection or pan gesture.
-
 ## <a name="demo"></a> 📱 Demo / Example
 
 #### Download or fork the repo and open the given `Example` Xcode project to try it out yourself!
