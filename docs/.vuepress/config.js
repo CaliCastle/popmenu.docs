@@ -14,6 +14,7 @@ module.exports = {
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'GitHub', link: 'https://github.com/CaliCastle/PopMenu' },
-    ]
+    ],
+    displayAllHeaders: true
   }
 }

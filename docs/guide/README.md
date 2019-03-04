@@ -1,3 +1,7 @@
+---
+sidebarDepth: 2
+---
+
 # Guide
 
 <p align="center">
@@ -371,10 +375,10 @@ To bulk set action colors is simple and straightforward:
 
 ```swift
 // The manager way
-manager.popMenuAppearance.popMenuColor.actionColor = UIColor.green // or use Color Literals if you're using Xcode 9
+manager.popMenuAppearance.popMenuColor.actionColor = .tint(.green) // or use Color Literals if you're using Xcode 9
 
 // The manual way
-menu.appearance.popMenuColor.actionColor = UIColor.green
+menu.appearance.popMenuColor.actionColor = .tint(.green)
 ```
 
 To set each action with different color, you'll have to specify in the `color` parameter initializer of action `PopMenuDefaultAction`:
