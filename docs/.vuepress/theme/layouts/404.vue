@@ -1,5 +1,5 @@
 <template>
-    <div class="antialiased md:flex min-h-screen">
+    <div class="antialiased md:flex min-h-screen four-o-four">
         <div class="w-full md:w-1/2 bg-white flex items-center justify-center">
             <div class="w-full max-w-sm m-8">
                 <div class="text-black text-5xl md:text-15xl font-black">
@@ -46,7 +46,7 @@
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Nunito');
+    @import url('https://fonts.googleapis.com/css?family=Saira');
 
     html {
         line-height: 1.15;
@@ -56,7 +56,7 @@
 
     body {
         margin: 0;
-        font-family: Nunito, sans-serif;
+        font-family: Saira, sans-serif;
         background: #fff;
     }
 

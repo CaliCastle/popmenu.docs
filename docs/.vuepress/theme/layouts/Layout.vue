@@ -11,6 +11,18 @@
 </script>
 
 <style>
+    html {
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-family: Saira, sans-serif;
+        background: #fff;
+    }
+
     .home .hero .action-button {
         border-radius: 14px;
     }
