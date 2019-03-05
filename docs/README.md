@@ -10,7 +10,7 @@ features:
   details: Want to customize the menu to make it integrate into your existing project? Fully customizable icons, fonts, colors, background, styles, corners, height, status bar... you name it.
 - title: Haptics & Gestures
   details: Comes with haptics for selection and also pan gesture built-in.
-footer: Copyright © 2019 Cali Castle | MIT Licensed
+footer: Copyright © 2019 Cali Castle | MIT Licensed | 很酷的菜单
 ---
 
 ---------

@@ -9,6 +9,7 @@ module.exports = {
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#32b436' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Saira:400,500,600,700,800' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+SC' }],
     ['meta', { rel: 'theme-color', content: '#ffffff' }],
   ],
   themeConfig: {

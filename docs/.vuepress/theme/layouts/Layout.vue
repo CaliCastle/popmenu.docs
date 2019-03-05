@@ -19,7 +19,7 @@
 
     body {
         margin: 0;
-        font-family: Saira, sans-serif;
+        font-family: Saira, Noto Sans SC, -apple-system, sans-serif;
         background: #fff;
     }
 
