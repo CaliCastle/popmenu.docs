@@ -1,3 +1,5 @@
+# Introduction
+
 ![](/hero.jpg)
 
 <p align="center">
@@ -10,12 +12,12 @@
     <a href="https://calicastle.github.io/PopMenu/"><img src="https://img.shields.io/badge/see-Documentation-green.svg"></a>
 </p>
 
-# Introduction
+## Description
 
 **PopMenu** is designed as a quick _popup_ action menu, much like an action sheet in iOS. If you want an action sheet that looks great, you're in the right place!
 
-**Showcase:**
+And what's a better way to know what `PopMenu` offers than screenshots? Here's a GIF to show you what you can do with `PopMenu`:
 
-What's a better way to know what `PopMenu` offers than screenshots? Here's a GIF to show you what you can do with `PopMenu`:
+## Demo
 
 <p align="center"><img src="https://raw.githubusercontent.com/CaliCastle/PopMenu/master/.assets/Demo_Showcase.gif"></p>
