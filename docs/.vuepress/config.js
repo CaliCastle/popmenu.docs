@@ -19,29 +19,22 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: 'Group 1',   // required
-        path: '/foo/',      // optional, which should be a absolute path.
-        collapsable: false, // optional, defaults to true
-        sidebarDepth: 2,
+        title: 'Guide',
+        path: '/guide',
+        collapsable: false,
         children: [
-          '/'
+          ['/guide/', 'Introduction'],
+          '/guide/getting-started'
         ]
-      },
-      {
-        title: 'Group 2',
-        children: [ /* ... */ ]
       }
-    ],
-    displayAllHeaders: true
+    ]
   },
   plugins: {
     '@vuepress/active-header-links': {},
     '@vuepress/back-to-top': {},
-    '@vuepress/clean-urls': {},
     '@vuepress/clean-urls': {
       normalSuffix: ''
     },
-    '@vuepress/pwa': {},
     '@vuepress/last-updated': {},
     '@vuepress/medium-zoom': {}
   }
