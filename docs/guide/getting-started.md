@@ -294,5 +294,3 @@ Before committing any changes, please make sure to read the [Contribution Guidel
 ## 📗 Check Documentation
 
 Documentation and references is available at [**https://calicastle.github.io/PopMenu/**](https://calicastle.github.io/PopMenu/)
-
-## [Join Our Slack Channel](https://join.slack.com/t/newpopmenu/shared_invite/enQtMzQ4OTExMzE0OTM1LWFhM2IxYmYxOGZmMTgzNjQxMWRiNzUyZmYwN2M4ZmQ2YWYxY2VhNWI3MDlmM2JhOTM5NjAwODlmNjQzMmVlODM)
