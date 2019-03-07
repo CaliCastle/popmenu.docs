@@ -16,7 +16,7 @@ module.exports = {
   ],
   themeConfig: {
     nav: [
-      { text: 'Guide', link: '/guide/' },
+      { text: 'Guide', icon: { name: 'book', type: 'solid' }, link: '/guide/' },
       {
         text: 'Support',
         icon: { name: 'envelope-open', type: 'solid' },
@@ -42,7 +42,11 @@ module.exports = {
         collapsable: false,
         children: [
           ['/guide/', 'Introduction'],
-          '/guide/getting-started'
+          '/guide/getting-started',
+          '/guide/how-to-use',
+          '/guide/using-controller',
+          '/guide/using-manager',
+          '/guide/configurations'
         ]
       },
       {

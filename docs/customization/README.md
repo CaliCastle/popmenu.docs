@@ -1,30 +1,25 @@
 # Make It Your Own
 
-### Before moving on, customization should be applied before presenting the menu, and assume that you already have a:
+::: tip Pre-requisites
+Customization should only be applied **before presenting** the menu, and assume that you already have either one of the following:
 
-variable of `PopMenuManager.default` called -> **`manager`**.
+- a `PopMenuViewController` variable called -> `menu`
+- a `PopMenuManager` variable called -> `manager`
+:::
 
-**----- or -----**
-
-variable of `PopMenuViewController` called -> **`menu`**.
-
-<br>
-
-Action Dismissal // Default: true
----------
+## Dismiss On Selection <Badge text="default: true"/>
 
 If you don't want the menu to auto-dismiss once a selection has been performed, you can change the property:
 
 ```swift
-// The manager way
-manager.popMenuShouldDismissOnSelection = false
-
-// The manual way
 menu.shouldDismissOnSelection = false
+
+// ======= or =======
+
+manager.popMenuShouldDismissOnSelection = false
 ```
 
-Background styles // Default: .dimmed(color: .black, opacity: 0.4)
----------
+## Background styles <Badge text="default: .dimmed(color: .black, opacity: 0.4)"/>
 
 There are mainly 3 types of background styles:
 
@@ -34,28 +29,27 @@ There are mainly 3 types of background styles:
 
 Simply set the `popMenuBackgroundStyle` on the appearance property using `.` notation:
 ```swift
-// The manager way
-manager.popMenuAppearance.popMenuBackgroundStyle = .blurred(.dark)
-manager.popMenuAppearance.popMenuBackgroundStyle = .blurred(.light)
-manager.popMenuAppearance.popMenuBackgroundStyle = .blurred(.extralight)
-manager.popMenuAppearance.popMenuBackgroundStyle = .dimmed(color: .white, opacity: 0.6)
-manager.popMenuAppearance.popMenuBackgroundStyle = .none()
-
-// The manual way, same to the code above
 menu.appearance.popMenuBackgroundStyle = .blurred(.dark)
+menu.appearance.popMenuBackgroundStyle = .blurred(.light)
+menu.appearance.popMenuBackgroundStyle = .blurred(.extralight)
+menu.appearance.popMenuBackgroundStyle = .dimmed(color: .white, opacity: 0.6)
+menu.appearance.popMenuBackgroundStyle = .none()
+
+// ======= or =======
+
+manager.popMenuAppearance.popMenuBackgroundStyle = .blurred(.dark)
 ```
 
-Action Color // Default: white
----------
+## Action Color <Badge text="default: white"/>
 
 To bulk set action colors is simple and straightforward:
 
 ```swift
-// The manager way
-manager.popMenuAppearance.popMenuColor.actionColor = .tint(.green) // or use Color Literals if you're using Xcode 9
+menu.appearance.popMenuColor.actionColor = .tint(.green) // or use Color Literals if you're using Xcode 9
 
-// The manual way
-menu.appearance.popMenuColor.actionColor = .tint(.green)
+// ======= or =======
+
+manager.popMenuAppearance.popMenuColor.actionColor = .tint(.green) // or use Color Literals if you're using Xcode 9
 ```
 
 To set each action with different color, you'll have to specify in the `color` parameter initializer of action `PopMenuDefaultAction`:
@@ -67,8 +61,7 @@ let actions = [
 ]
 ```
 
-Background Color(s) // Default: flat black gradient
----------
+## Background Color(s) <Badge text="default: flat dark gradient"/> 
 
 There are 2 types of background colors:
 
@@ -78,70 +71,66 @@ There are 2 types of background colors:
 To set the background color(s) of the menu:
 
 ```swift
-// The manager way
-manager.popMenuAppearance.popMenuColor.backgroundColor = .solid(fill: .gray) // A solid gray background color
-manager.popMenuAppearance.popMenuColor.backgroundColor = .gradient(fill: .yellow, .pink) // A gradient from yellow to pink
+menu.appearance.popMenuColor.backgroundColor = .solid(fill: .gray) // A solid gray background color
+menu.appearance.popMenuColor.backgroundColor = .gradient(fill: .yellow, .pink) // A gradient from yellow to pink
 
-// The manual way
-menu.appearance.popMenuColor.backgroundColor = ...
+// ======= or =======
+
+manager.popMenuAppearance.popMenuColor.backgroundColor = ...
 ```
 
-Action Font // Default: .systemFont(ofSize: 16, weight: .semiBold)
----------
+## Action Font <Badge text="default: .systemFont(ofSize: 16, weight: .semiBold)"/>
 
 To set the font of all actions:
 
 ```swift
-// The manager way
-manager.popMenuAppearance.popMenuFont = UIFont(name: "AvenirNext-DemiBold", size: 14)!
-manager.popMenuAppearance.popMenuFont = .systemFont(ofSize: 15, weight: .bold)
-
-// The manual way
 menu.appearance.popMenuFont = UIFont(name: "AvenirNext-DemiBold", size: 14)!
+menu.appearance.popMenuFont = .systemFont(ofSize: 15, weight: .bold)
+
+// ======= or =======
+
+manager.popMenuAppearance.popMenuFont = ...
 ```
 
-Corner Radius // Default: 24
----------
+## Corner Radius <Badge text="default: 24"/>
 
 To set corner radius of the menu container:
 
 ```swift
-// The manager way
-manager.popMenuAppearance.popMenuCornerRadius = 10
-
-// The manual way
 menu.appearance.popMenuCornerRadius = 10
+
+// ======= or =======
+
+manager.popMenuAppearance.popMenuCornerRadius = 10
 ```
 
-Action Height // Default: 50
----------
+## Action Height <Badge text="default: 50"/>
 
 To set height of each action:
 
 ```swift
-// The manager way
-manager.popMenuAppearance.popMenuActionHeight = 65
-
-// The manual way
 menu.appearance.popMenuActionHeight = 65
+
+// ======= or =======
+
+manager.popMenuAppearance.popMenuActionHeight = 65
 ```
 
-Action Item Separator // Default: none
----------
+## Action Item Separator <Badge text="default: none"/>
 
 To set the action item separator:
 
 ```swift
-// The manager way
-manager.popMenuAppearance.popMenuItemSeparator = .none()
-manager.popMenuAppearance.popMenuItemSeparator = .fill() // Default height of 0.5, white color with 0.5 opacity
-manager.popMenuAppearance.popMenuItemSeparator = .fill(.yellow, height: 1) // Or set it yourself
+menu.appearance.popMenuItemSeparator = .none()
+menu.appearance.popMenuItemSeparator = .fill() // Default height of 0.5, white color with 0.5 opacity
+menu.appearance.popMenuItemSeparator = .fill(.yellow, height: 1) // Or set it yourself
 
-// The manual way
-menu.appearance.popMenuItemSeparator = ...
+// ======= or =======
+
+manager.popMenuAppearance.popMenuItemSeparator = ...
 ```
-Action Image Rendering Mode // Default: .alwaysTemplate
----------
+
+## Action Image Rendering Mode <Badge text="default: .alwaysTemplate"/>
 
 To set the action item image rendering mode:
 
@@ -149,8 +138,8 @@ To set the action item image rendering mode:
 let action = PopMenuDefaultAction(title: "Some Title", image: UIImage(named: "blah"), color: .gray)
 action.imageRenderingMode = .alwaysOriginal
 ```
-Action Image Sizing // Default: 27 pt
----------
+
+## Action Image Sizing <Badge text="default: 27"/>
 
 To set the action item image sizing:
 
@@ -158,26 +147,33 @@ To set the action item image sizing:
 let action = PopMenuDefaultAction(title: "Some Title", image: UIImage(named: "blah"), color: .gray)
 action.iconWidthHeight = 45
 ```
-Scrollable when actions are more than 6 or custom
----------
+
+## Scrollable when actions are more than 6 or custom
 
 To set the scrolling properties:
 
 ```swift
-// The manual way
 menu.appearance.popMenuActionCountForScrollable = 10 // default 6
 menu.appearance.popMenuScrollIndicatorHidden = true // default false
 menu.appearance.popMenuScrollIndicatorStyle = .black // default .white
+
+// ======= or =======
+
+manager.popMenuAppearance.popMenuActionCountForScrollable = ... // same as above
 ```
-Status Bar Style // Default: automatic detection based on background color
----------
+
+## Status Bar Style <Badge text="default: automatic detection based on background color"/>
 
 If you don't want `PopMenu` to use automatic detection to set status bar style, you can override it:
 
 ```swift
-manager.popMenuAppearance.popMenuStatusBarStyle = .default
-
-// The manual way
 menu.appearance.popMenuStatusBarStyle = .default
+
+// ======= or =======
+
+manager.popMenuAppearance.popMenuStatusBarStyle = .default
 ```
-More customization coming, stay tuned...
+
+## Missing Customization?
+
+If there's any missing customization that you'd want `PopMenu` to have, feel free to open an issue in the official <Icon name="github" type="brand" /> [GitHub](https://github.com/CaliCastle/PopMenu/issues) repository.
