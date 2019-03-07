@@ -22,6 +22,11 @@ module.exports = {
         icon: { name: 'envelope-open', type: 'solid' },
         items: [
           {
+            text: 'Twitter',
+            icon: { name: 'twitter', type: 'brand' },
+            link: 'https://twitter.com/calicastlemusic'
+          },
+          {
             text: 'Slack',
             icon: { name: 'slack', type: 'brand' },
             link: 'https://join.slack.com/t/newpopmenu/shared_invite/enQtMzQ4OTExMzE0OTM1LWFhM2IxYmYxOGZmMTgzNjQxMWRiNzUyZmYwN2M4ZmQ2YWYxY2VhNWI3MDlmM2JhOTM5NjAwODlmNjQzMmVlODM'
