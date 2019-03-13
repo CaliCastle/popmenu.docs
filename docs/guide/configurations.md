@@ -29,15 +29,49 @@ final class YourViewController: UIViewController {
 
         // ===== or =====
 
-                
+
         // Using Manager
         let manager = PopMenuManager.default
         manager.actions = [...] // add your actions here
-        
+
         // Pass the UIView in the `present` method
         manager.present(sourceView: sender)
     }
 
+}
+```
+
+-------
+
+## Gesture Driven Presentation
+
+Providing a Source View is a good way to show PopMenu on a particular view. However, if your source view is large or you're showing pop menu in response to a Gesture Recognizition, you can present the PopMenu with `UIGestureRecognizer` instance when presenting the PopMenu with `PopMenuManager`. It will use the location of touch as reference location to present PopMenu.
+
+Example Usage:
+```swift
+
+final class YourViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupGestureRecognizer()
+    }
+
+    private func setupGestureRecognizer() {
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressImage)))
+        myLargeImageView.addGestureRecognizer(longPressGesture)
+    }
+}
+
+extension YourViewController: UIGestureRecognizerDelegate {
+    @objc func didLongPressImage(_ sender: UIGestureRecognizer) {
+        let manager = PopMenuManager.default
+        manager.actions = [...] // add your actions here
+
+        // Pass the UIGestureRecognizer to the `present` method
+        manager.present(with: sender)
+    }
 }
 ```
 
@@ -109,7 +143,7 @@ If you'd want more control to execute some code when the menu is dismissed, you 
 // If using Controller
 menu.didDismiss = { selected in
     // `selected` is a bool indicating if a selection has been made
-    
+
     if !selected {
         // When the user tapped outside of the menu
     }
