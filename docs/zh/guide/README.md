@@ -14,9 +14,9 @@
 
 ## 关于
 
-**PopMenu** is designed as a quick _popup_ action menu, much like an action sheet in iOS. If you want an action sheet that looks great, you're in the right place!
+**PopMenu** 设计初衷就是一款简单的 _弹出菜单_， 一款简易即可高度自定义化以又可以跟iOS默认的Action Sheet一样拥有很大的灵活性. 如果你的app需要一款灵活好看的弹出菜单的话，`PopMenu`就是你的不二之选
 
-And what's a better way to know what `PopMenu` offers than screenshots? Here's a GIF to show you what you can do with `PopMenu`:
+想知道 `PopMenu` 能做些什么？下方的GIF图包括了部分的样本展示:
 
 ## 展示
 
