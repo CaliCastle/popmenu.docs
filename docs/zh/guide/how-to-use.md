@@ -30,5 +30,5 @@ import PopMenu
 2. 使用默认的 `管理器` 的好处是不直接与控制器打交道， 而让控制器去决定在目前最顶端的控制器来展示弹出菜单
 
 :::tip 尽量使用 `控制器`
-It's highly recommended to present the menu using the good ol' way of instantiating a `PopMenuViewController`
+直接使用`PopMenuViewController`来展示弹出菜单的话更加可控一些，错误几率更小
 :::
