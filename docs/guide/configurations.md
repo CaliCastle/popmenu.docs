@@ -49,7 +49,7 @@ In order to know which menu item was tapped, there are two ways of accomplishing
 1. Using **Action Handlers**
 2. Using **Delegate**
 
-## Action Handler
+### Action Handler
 
 Simply pass the handler when instantiating the action:
 
@@ -62,7 +62,7 @@ let action1 = PopMenuDefaultAction(title: "Action 1", didSelect: { action in
 })
 ```
 
-## Delegate Method
+### Delegate Method
  You'll need to conform your own **ViewController** to the `PopMenuViewControllerDelegate` protocol and then implement the method `popMenuDidSelectItem(at index: Int)`:
 
 Example:
