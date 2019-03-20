@@ -5,11 +5,11 @@ next: /zh/customization/
 
 # 配置
 
-## 设置源头
+## 设置源位置
 
-By default, `PopMenu` will present in the center of your screen. If you want it to display the menu where the user tapped, you can pass the source view in like this:
+默认下的 `PopMenu` 会将呈现在屏幕中央. 如果你希望菜单显示在自定义的位置，可以传源位置到参数中去:
 
-Example usage:
+例子:
 
 ```swift
 final class YourViewController: UIViewController {
@@ -19,10 +19,10 @@ final class YourViewController: UIViewController {
     }
 
     @IBAction func presentMenu(_ sender: UIButton) {
-        // Using Controller
-        let actions = [...] // add your actions here
+        // 使用控制器
+        let actions = [...] // 添加菜单项
 
-        // Pass the UIView in init
+        // 传入一个 UIView
         let menu = PopMenuViewController(sourceView: sender, actions: actions)
         present(menu, animated: true, completion: nil)
 
@@ -30,11 +30,11 @@ final class YourViewController: UIViewController {
         // ===== or =====
 
                 
-        // Using Manager
+        // 使用管理器
         let manager = PopMenuManager.default
-        manager.actions = [...] // add your actions here
+        manager.actions = [...] // 添加菜单项
         
-        // Pass the UIView in the `present` method
+        // 传入一个 UIView
         manager.present(sourceView: sender)
     }
 
@@ -43,47 +43,47 @@ final class YourViewController: UIViewController {
 
 -------
 
-## Selection Callback
+## 选中回调
 
-In order to know which menu item was tapped, there are two ways of accomplishing that:
-1. Using **Action Handlers**
-2. Using **Delegate**
+要想知道哪个菜单项被用户选中了，一共有两种方法：
+1. 使用 **Action Handlers** （闭包函数）
+2. 使用 **Delegate** （委托机制）
 
-## Action Handler
+### 闭包函数
 
-Simply pass the handler when instantiating the action:
+只需传入一个闭包函数即可：
 
-Example:
+例子:
 ```swift
-let action1 = PopMenuDefaultAction(title: "Action 1", didSelect: { action in
-    // action is a `PopMenuAction`, in this case it's a `PopMenuDefaultAction`
+let action1 = PopMenuDefaultAction(title: "菜单1", didSelect: { action in
+    // action 是一个 `PopMenuAction`, 该例子为 `PopMenuDefaultAction`
 
-    print("\(action.title) is tapped") // will print out: 'Action 1 is tapped'
+    print("\(action.title) 被选中了") // 会打印出: '菜单1 被选中了'
 })
 ```
 
-## Delegate Method
- You'll need to conform your own **ViewController** to the `PopMenuViewControllerDelegate` protocol and then implement the method `popMenuDidSelectItem(at index: Int)`:
+### 委托方法
+你需要让你的 **ViewController** 遵循 `PopMenuViewControllerDelegate` 协议然后实现函数 `popMenuDidSelectItem(at index: Int)`:
 
-Example:
+例子:
 ```swift
 class YourViewController: UIViewController {
 
-    // If you're using Controller to show menu:
+    // 如果使用控制器的话:
     func presentMenuManually() {
         let menu = PopMenuViewController(actions: [...])
 
-        // Set delegate for callback
+        // 设置委托对象
         menu.delegate = self
 
         present(menu, animated: true, completion: nil)
     }
 
-    // or if you're using Manager to present menu:
+    // 使用管理器的话:
     func presentMenuUsingManager() {
         let manager = PopMenuManager.default
 
-        // Set delegate for callback
+        // 设置委托对象
         manager.popMenuDelegate = self
 
         manager.present(on: self)
@@ -93,55 +93,56 @@ class YourViewController: UIViewController {
 
 extension YourViewController: PopMenuViewControllerDelegate {
 
-    // This will be called when a menu action was selected
+    // 当一个菜单项被选中后会调用此方法
     func popMenuDidSelectItem(_ popMenuViewController: PopMenuViewController, at index: Int) {
-        // Do stuff here...
+        // 运行逻辑...
     }
 
 }
 ```
 
-## Dismissal Callback
+## 消失回调
 
-If you'd want more control to execute some code when the menu is dismissed, you can use the handler callback:
+如果想只在菜单消失后执行一些代码，那么可以：
 
 ```swift
-// If using Controller
+// 使用控制器
 menu.didDismiss = { selected in
-    // `selected` is a bool indicating if a selection has been made
+    // `selected` 是一个布尔值，代表着是否有选中的菜单项
     
     if !selected {
-        // When the user tapped outside of the menu
+        // 当用户隐藏了菜单（没有任何选择下）
     }
 }
 
-// If using Manager
+// 使用控制器
 manager.popMenuDidDismiss = { selected in
-    // `selected` is a bool indicating if a selection has been made
+    // `selected` 是一个布尔值，代表着是否有选中的菜单项
 
     if !selected {
-        // When the user tapped outside of the menu
+        // 当用户隐藏了菜单（没有任何选择下）
     }
 }
 ```
 
-## Configurations
+## 额外设置
 
-By default, PopMenu has pan gesture enabled, you can toggle it here:
+默认下，菜单开启了滑动手势来更改目前选中的菜单项，可以在这里设置：
 
 ```swift
-// If using Controller
+// 使用控制器
 menu.shouldEnablePanGesture = false
-// If using Manager
+// 使用管理器
 manager.popMenuShouldEnablePanGesture = false
 ```
-By default, PopMenu has haptics enabled, you can toggle it here:
+
+默认下，菜单开启了Haptics震动引擎，可以在这里设置：
 
 ```swift
-// If using Controller
+// 使用控制器
 menu.shouldEnableHaptics = false
-// If using Manager
+// 使用管理器
 manager.popMenuShouldEnableHaptics = false
 ```
 
-That's basically it! You've completed the guides on how to use `PopMenu`, congrats :confetti_ball: !
+主要的用法与设置就到此结束啦！恭喜完成了开发指南！:confetti_ball:

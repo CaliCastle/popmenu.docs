@@ -148,7 +148,7 @@ let action = PopMenuDefaultAction(title: "Some Title", image: UIImage(named: "bl
 action.iconWidthHeight = 45
 ```
 
-## Scrollable when actions are more than 6 or custom
+## Scrollable when actions are too many
 
 To set the scrolling properties:
 

@@ -1,33 +1,34 @@
 # 可更换样式大全
 
-::: tip Pre-requisites
-Customization should only be applied **before presenting** the menu, and assume that you already have either one of the following:
+::: tip 须知
+更换样式必须发生在**展示菜单之前**，并且满足以下其中之一的需求：
 
-- a `PopMenuViewController` variable called -> `menu`
-- a `PopMenuManager` variable called -> `manager`
+假如
+- 有一个 `PopMenuViewController` 的变量名为 -> `menu`
+- 有一个 `PopMenuManager` 的变量名为 -> `manager`
 :::
 
-## Dismiss On Selection <Badge text="default: true"/>
+## 选中后自动隐藏 <Badge text="默认: true"/>
 
-If you don't want the menu to auto-dismiss once a selection has been performed, you can change the property:
+如果你不想让菜单在选中菜单项后自动隐藏，那么可以：
 
 ```swift
 menu.shouldDismissOnSelection = false
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuShouldDismissOnSelection = false
 ```
 
-## Background styles <Badge text="default: .dimmed(color: .black, opacity: 0.4)"/>
+## 背景样式 <Badge text="默认: .dimmed(color: .black, opacity: 0.4)"/>
 
-There are mainly 3 types of background styles:
+一共有三种背景样式
 
-- Blurred (dark, light & extra Light)
-- Dimmed (color & opacity)
-- None
+- 高斯模糊 (暗, 亮 & 非常亮)
+- 聚焦效果 (颜色 和 透明度)
+- 无背景
 
-Simply set the `popMenuBackgroundStyle` on the appearance property using `.` notation:
+只需要设置 `popMenuBackgroundStyle` 即可:
 ```swift
 menu.appearance.popMenuBackgroundStyle = .blurred(.dark)
 menu.appearance.popMenuBackgroundStyle = .blurred(.light)
@@ -35,145 +36,144 @@ menu.appearance.popMenuBackgroundStyle = .blurred(.extralight)
 menu.appearance.popMenuBackgroundStyle = .dimmed(color: .white, opacity: 0.6)
 menu.appearance.popMenuBackgroundStyle = .none()
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuBackgroundStyle = .blurred(.dark)
 ```
 
-## Action Color <Badge text="default: white"/>
+## 菜单项颜色 <Badge text="默认: white"/>
 
-To bulk set action colors is simple and straightforward:
+如果想设置多个菜单项的颜色的话：
 
 ```swift
-menu.appearance.popMenuColor.actionColor = .tint(.green) // or use Color Literals if you're using Xcode 9
+menu.appearance.popMenuColor.actionColor = .tint(.green) // 或者如果是Xcode 9以后的话也可以用自选颜色
 
-// ======= or =======
+// ======= 或者 =======
 
-manager.popMenuAppearance.popMenuColor.actionColor = .tint(.green) // or use Color Literals if you're using Xcode 9
+manager.popMenuAppearance.popMenuColor.actionColor = .tint(.green) // 或者如果是Xcode 9以后的话也可以用自选颜色
 ```
 
-To set each action with different color, you'll have to specify in the `color` parameter initializer of action `PopMenuDefaultAction`:
+如果需要给单独菜单项设置不同颜色的话，你需要在菜单项 `PopMenuDefaultAction` 的init中传入 `color`:
 
 ```swift
 let actions = [
-    PopMenuDefaultAction(title: "Some Title", image: UIImage(named: "blah"), color: .gray),
-    PopMenuDefaultAction(title: "Another Title", image: UIImage(named: "icon"), color: .yellow)
+    PopMenuDefaultAction(title: "随机标题", image: UIImage(named: "blah"), color: .gray),
+    PopMenuDefaultAction(title: "又是一个标题", image: UIImage(named: "icon"), color: .yellow)
 ]
 ```
 
-## Background Color(s) <Badge text="default: flat dark gradient"/> 
+## 菜单内背景颜色 <Badge text="默认: 扁平风黑色渐变"/> 
 
-There are 2 types of background colors:
+一共有两种菜单内背景色:
 
-- Solid fill (one color)
-- Gradient fill (two colors)
+- 纯色填充
+- 渐变填充
 
-To set the background color(s) of the menu:
+非常简单:
 
 ```swift
-menu.appearance.popMenuColor.backgroundColor = .solid(fill: .gray) // A solid gray background color
-menu.appearance.popMenuColor.backgroundColor = .gradient(fill: .yellow, .pink) // A gradient from yellow to pink
+menu.appearance.popMenuColor.backgroundColor = .solid(fill: .gray) // 一个纯灰色的菜单背景色
+menu.appearance.popMenuColor.backgroundColor = .gradient(fill: .yellow, .pink) // 一个从粉色到黄色渐变的背景
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuColor.backgroundColor = ...
 ```
 
-## Action Font <Badge text="default: .systemFont(ofSize: 16, weight: .semiBold)"/>
+## 菜单项字体 <Badge text="默认: .systemFont(ofSize: 16, weight: .semiBold)"/>
 
-To set the font of all actions:
+设置自定义字体:
 
 ```swift
 menu.appearance.popMenuFont = UIFont(name: "AvenirNext-DemiBold", size: 14)!
 menu.appearance.popMenuFont = .systemFont(ofSize: 15, weight: .bold)
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuFont = ...
 ```
 
-## Corner Radius <Badge text="default: 24"/>
+## 圆角半径 <Badge text="默认: 24"/>
 
-To set corner radius of the menu container:
 
 ```swift
 menu.appearance.popMenuCornerRadius = 10
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuCornerRadius = 10
 ```
 
-## Action Height <Badge text="default: 50"/>
+## 菜单项高度 <Badge text="默认: 50"/>
 
-To set height of each action:
+每个菜单项的高度:
 
 ```swift
 menu.appearance.popMenuActionHeight = 65
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuActionHeight = 65
 ```
 
-## Action Item Separator <Badge text="default: none"/>
+## 菜单项分割线 <Badge text="默认: 无"/>
 
-To set the action item separator:
+指定菜单项的分割线:
 
 ```swift
 menu.appearance.popMenuItemSeparator = .none()
-menu.appearance.popMenuItemSeparator = .fill() // Default height of 0.5, white color with 0.5 opacity
-menu.appearance.popMenuItemSeparator = .fill(.yellow, height: 1) // Or set it yourself
+menu.appearance.popMenuItemSeparator = .fill() // 默认线高度为0.5, 白色以及0.5的透明度
+menu.appearance.popMenuItemSeparator = .fill(.yellow, height: 1) // 或者任何颜色与高度
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuItemSeparator = ...
 ```
 
-## Action Image Rendering Mode <Badge text="default: .alwaysTemplate"/>
+## 菜单项图片渲染模式 <Badge text="默认: .alwaysTemplate"/>
 
-To set the action item image rendering mode:
+设置单独菜单项的渲染模式:
 
 ```swift
-let action = PopMenuDefaultAction(title: "Some Title", image: UIImage(named: "blah"), color: .gray)
+let action = PopMenuDefaultAction(title: "一个标题", image: UIImage(named: "blah"), color: .gray)
 action.imageRenderingMode = .alwaysOriginal
 ```
 
-## Action Image Sizing <Badge text="default: 27"/>
+## 菜单项图片大小 <Badge text="默认: 27"/>
 
-To set the action item image sizing:
+设置单独菜单项的图片大小:
 
 ```swift
-let action = PopMenuDefaultAction(title: "Some Title", image: UIImage(named: "blah"), color: .gray)
+let action = PopMenuDefaultAction(title: "一个标题", image: UIImage(named: "blah"), color: .gray)
 action.iconWidthHeight = 45
 ```
 
-## Scrollable when actions are more than 6 or custom
+## 当菜单项过多自动滑动
 
-To set the scrolling properties:
+设置菜单的滑动功能:
 
 ```swift
-menu.appearance.popMenuActionCountForScrollable = 10 // default 6
-menu.appearance.popMenuScrollIndicatorHidden = true // default false
-menu.appearance.popMenuScrollIndicatorStyle = .black // default .white
+menu.appearance.popMenuActionCountForScrollable = 10 // 默认 6
+menu.appearance.popMenuScrollIndicatorHidden = true // 默认 false
+menu.appearance.popMenuScrollIndicatorStyle = .black // 默认 .white
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuActionCountForScrollable = ... // same as above
 ```
 
-## Status Bar Style <Badge text="default: automatic detection based on background color"/>
+## 状态栏样式 <Badge text="默认: 自定根据背景色检测"/>
 
 If you don't want `PopMenu` to use automatic detection to set status bar style, you can override it:
 
 ```swift
 menu.appearance.popMenuStatusBarStyle = .default
 
-// ======= or =======
+// ======= 或者 =======
 
 manager.popMenuAppearance.popMenuStatusBarStyle = .default
 ```
 
-## Missing Customization?
+## 缺失其他自定义？
 
-If there's any missing customization that you'd want `PopMenu` to have, feel free to open an issue in the official <Icon name="github" type="brand" /> [GitHub](https://github.com/CaliCastle/PopMenu/issues) repository.
+如果有任何你希望能设置的自定义参数并不在以上的列表中，欢迎前往官方Repo提交新issue <Icon name="github" type="brand" /> [GitHub](https://github.com/CaliCastle/PopMenu/issues)
