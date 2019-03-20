@@ -16,7 +16,6 @@ export default {
     color hsl(5%, 5%, 5%)
     text-align center
     opacity 0.6
-
     a
         color inherit
 </style>
