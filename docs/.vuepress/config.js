@@ -32,11 +32,6 @@ module.exports = {
         nav: [
           { text: 'Guide', icon: { name: 'book', type: 'solid' }, link: '/guide/' },
           {
-            text: 'Twitter',
-            icon: { name: 'twitter', type: 'brand' },
-            link: 'https://twitter.com/calicastlemusic'
-          },
-          {
             link: 'https://join.slack.com/t/newpopmenu/shared_invite/enQtMzQ4OTExMzE0OTM1LWFhM2IxYmYxOGZmMTgzNjQxMWRiNzUyZmYwN2M4ZmQ2YWYxY2VhNWI3MDlmM2JhOTM5NjAwODlmNjQzMmVlODM',
             text: 'Support',
             icon: { name: 'envelope-open', type: 'solid' },
@@ -51,6 +46,11 @@ module.exports = {
                 icon: { name: 'github', type: 'brand' },
                 link: 'https://github.com/CaliCastle/popmenu/issues/new'
               },
+              {
+                text: 'Twitter',
+                icon: { name: 'twitter', type: 'brand' },
+                link: 'https://twitter.com/calicastlemusic'
+              }
             ]
           },
           { text: 'GitHub', icon: { name: 'github', type: 'brand' }, link: 'https://github.com/CaliCastle/PopMenu' },
@@ -99,6 +99,11 @@ module.exports = {
                 icon: { name: 'github', type: 'brand' },
                 link: 'https://github.com/CaliCastle/popmenu/issues/new'
               },
+              {
+                text: 'Twitter',
+                icon: { name: 'twitter', type: 'brand' },
+                link: 'https://twitter.com/calicastlemusic'
+              }
             ]
           },
           { text: 'GitHub', icon: { name: 'github', type: 'brand' }, link: 'https://github.com/CaliCastle/PopMenu' },
