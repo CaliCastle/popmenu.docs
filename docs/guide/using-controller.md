@@ -15,8 +15,8 @@ Additionally, you can create actions by passing the actions in the initializer:
 
 ```swift
 let menuViewController = PopMenuViewController(actions: [
-    PopMenuDefaultAction(title: "Action Title 1", image: UIImage(named: "icon"),
-    PopMenuDefaultAction(title: "Action Title 2", image: UIImage(named: "icon")
+    PopMenuDefaultAction(title: "Action Title 1", image: UIImage(named: "icon")),
+    PopMenuDefaultAction(title: "Action Title 2", image: UIImage(named: "icon"))
 ])
 ```
 
@@ -29,7 +29,7 @@ final class YourViewController: UIViewController {
     // Example method to present a pop menu
     func presentMenu() {
         let menuViewController = PopMenuViewController(actions: [
-            PopMenuDefaultAction(title: "Action Title 1", image: UIImage(named: "icon"),
+            PopMenuDefaultAction(title: "Action Title 1", image: UIImage(named: "icon")),
             PopMenuDefaultAction(title: "Action Title 2", image: UIImage(named: "icon"))
         ])
 
